@@ -8,13 +8,6 @@ It replicates the layout and design of YouTube, including video thumbnails, chan
 
 ---
 
-## 🌐 Live Demo
-
-[Click here to view the live site](#)  
-*(Replace this with your GitHub Pages link if hosted, like `https://yourusername.github.io/youtube-clone/`)*
-
----
-
 ##  Features
 
 -  Responsive design (desktop, tablet, mobile)
