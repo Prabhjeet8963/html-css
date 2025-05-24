@@ -1,0 +1,28 @@
+p{
+    font-family: Arial;
+}
+.currency-bold{
+font-weight:500;
+font-size: large;
+}
+.country-small{ 
+font-size: 14px;
+color: rgb(96, 96, 96);
+margin-left:4px;
+
+}
+.update-inc{
+ font-size: medium;
+ font-weight:300;
+ color: green;
+}
+.time-update{
+color: rgb(96, 96, 96);
+margin-left:4px;
+
+}
+.decriment-color{
+color:rgb(255,0,0)
+
+}
+
