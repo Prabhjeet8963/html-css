@@ -1,26 +1,26 @@
-# YouTube UI Clone
+# html-css
+# YouTube Clone (HTML + CSS)
 
-A simple, responsive clone of the YouTube homepage built with HTML and CSS.
+This is a responsive front-end clone of the YouTube homepage built using **HTML** and **CSS**.  
+It replicates the layout and design of YouTube, including video thumbnails, channel info, and responsive behavior.
 
-**Live Website:**  
-[https://prabhjeet8963.github.io/html-css/youtube.html](https://prabhjeet8963.github.io/html-css/youtube.html)
+> 🛠 Built by following the [SuperSimpleDev YouTube HTML/CSS tutorial](https://youtu.be/G3e-cpL7ofc?si=fb1idtjOTVYc_g2-)
 
-## Features
+---
 
-- Responsive layout for desktop and mobile
-- Video thumbnail cards with channel info
-- Sidebar navigation (visible on large screens)
-- Clean, modern look
+##  Features
 
-## Skills Used & Learned
+-  Responsive design (desktop, tablet, mobile)
+-  Video thumbnail cards
+-  Channel profile pictures and info
+-  Sidebar navigation (visible on large screens)
+-  Mobile-friendly layout with Flexbox and Grid
 
-- HTML5 structure and semantics
-- CSS3 styling
-- Flexbox and Grid layout
-- Responsive web design with media queries
-- Google Fonts integration
+---
 
-## Credits
+##  Technologies Used
 
-Built by following the  
-[SuperSimpleDev YouTube HTML/CSS tutorial](https://youtu.be/G3e-cpL7ofc?si=fb1idtjOTVYc_g2-)
+- HTML
+- CSS (Flexbox & Grid)
+- Google Fonts
+---
