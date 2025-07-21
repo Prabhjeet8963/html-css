@@ -18,7 +18,7 @@
             --text-light: #6c757d;
             --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
             --gradient-1: linear-gradient(135deg, #4361ee, #3a0ca3);
-            --gradient-2: linear-gradient(135deg, #00b4d8, #48cae4);
+            --gradient-2: linear-gradient(135deg, #008cd8, #48cae4);
         }
 
         * {
@@ -168,6 +168,62 @@
             z-index: -1;
             transform: skewY(-3deg);
             transform-origin: top right;
+        }
+        
+        .learning-graph {
+            margin: 3rem auto;
+            max-width: 800px;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+        
+        .graph-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            height: 250px;
+            padding: 1rem 0;
+            border-bottom: 2px solid var(--border-color);
+            position: relative;
+        }
+        
+        .graph-bar {
+            width: 14%;
+            background: var(--gradient-1);
+            border-radius: 8px 8px 0 0;
+            position: relative;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .graph-bar:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(67, 97, 238, 0.2);
+        }
+        
+        .graph-label {
+            position: absolute;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-color);
+            text-align: center;
+            width: 120px;
+            white-space: nowrap;
+        }
+        
+        @media (max-width: 768px) {
+            .graph-container {
+                height: 200px;
+            }
+            
+            .graph-label {
+                font-size: 0.7rem;
+                width: 80px;
+            }
         }
 
         .lesson-grid {
@@ -544,14 +600,39 @@
         <section class="journey-section">
             <h2>The Learning Journey</h2>
             
-            <h3>Basic HTML Elements</h3>
+            <div class="learning-graph">
+                <div class="graph-container">
+                    <div class="graph-bar" style="height: 20%;"><span class="graph-label">HTML Basics</span></div>
+                    <div class="graph-bar" style="height: 35%;"><span class="graph-label">CSS Fundamentals</span></div>
+                    <div class="graph-bar" style="height: 50%;"><span class="graph-label">Layout Techniques</span></div>
+                    <div class="graph-bar" style="height: 65%;"><span class="graph-label">Advanced Styling</span></div>
+                    <div class="graph-bar" style="height: 80%;"><span class="graph-label">Responsive Design</span></div>
+                    <div class="graph-bar" style="height: 95%;"><span class="graph-label">Project Implementation</span></div>
+                </div>
+            </div>
+            
+            <h3>Lessons (In Order)</h3>
             <div class="lesson-grid">
+                <div class="lesson-card">
+                    <div class="preview-container">
+                        <iframe src="lessons/lesson1.html"></iframe>
+                    </div>
+                    <div class="lesson-content">
+                        <h4 class="lesson-title">Links & Basic Structure (lesson1.html)</h4>
+                        <div class="tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">Links</span>
+                        </div>
+                        <p class="lesson-description">Learning about hyperlinks and basic HTML document structure.</p>
+                        <a href="lessons/lesson1.html" class="btn" target="_blank">View Demo</a>
+                    </div>
+                </div>
                 <div class="lesson-card">
                     <div class="preview-container">
                         <iframe src="lessons/02-text.html"></iframe>
                     </div>
                     <div class="lesson-content">
-                        <h4 class="lesson-title">Text Elements</h4>
+                        <h4 class="lesson-title">Text Elements (02-text.html)</h4>
                         <div class="tags">
                             <span class="tag">HTML</span>
                             <span class="tag">Typography</span>
@@ -560,13 +641,12 @@
                         <a href="lessons/02-text.html" class="btn" target="_blank">View Demo</a>
                     </div>
                 </div>
-
                 <div class="lesson-card">
                     <div class="preview-container">
                         <iframe src="lessons/01-buttons.html"></iframe>
                     </div>
                     <div class="lesson-content">
-                        <h4 class="lesson-title">Buttons</h4>
+                        <h4 class="lesson-title">Buttons (01-buttons.html)</h4>
                         <div class="tags">
                             <span class="tag">HTML</span>
                             <span class="tag">CSS</span>
@@ -576,31 +656,56 @@
                         <a href="lessons/01-buttons.html" class="btn" target="_blank">View Demo</a>
                     </div>
                 </div>
-
                 <div class="lesson-card">
                     <div class="preview-container">
-                        <iframe src="lessons/lesson1.html"></iframe>
+                        <iframe src="lessons/03-flexbox.html"></iframe>
                     </div>
                     <div class="lesson-content">
-                        <h4 class="lesson-title">Links & Basic Structure</h4>
+                        <h4 class="lesson-title">Flexbox Layout (03-flexbox.html)</h4>
                         <div class="tags">
-                            <span class="tag">HTML</span>
-                            <span class="tag">Links</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">Flexbox</span>
+                            <span class="tag">Layout</span>
                         </div>
-                        <p class="lesson-description">Learning about hyperlinks and basic HTML document structure.</p>
-                        <a href="lessons/lesson1.html" class="btn" target="_blank">View Demo</a>
+                        <p class="lesson-description">Using Flexbox for creating flexible page layouts.</p>
+                        <a href="lessons/03-flexbox.html" class="btn" target="_blank">View Demo</a>
                     </div>
                 </div>
-            </div>
-
-            <h3>CSS Styling & Layout</h3>
-            <div class="lesson-grid">
+                <div class="lesson-card">
+                    <div class="preview-container">
+                        <iframe src="lessons/04-grid.html"></iframe>
+                    </div>
+                    <div class="lesson-content">
+                        <h4 class="lesson-title">CSS Grid (04-grid.html)</h4>
+                        <div class="tags">
+                            <span class="tag">CSS</span>
+                            <span class="tag">Grid</span>
+                            <span class="tag">Layout</span>
+                        </div>
+                        <p class="lesson-description">Creating two-dimensional layouts with CSS Grid.</p>
+                        <a href="lessons/04-grid.html" class="btn" target="_blank">View Demo</a>
+                    </div>
+                </div>
+                <div class="lesson-card">
+                    <div class="preview-container">
+                        <iframe src="lessons/05-position.html"></iframe>
+                    </div>
+                    <div class="lesson-content">
+                        <h4 class="lesson-title">CSS Positioning (05-position.html)</h4>
+                        <div class="tags">
+                            <span class="tag">CSS</span>
+                            <span class="tag">Position</span>
+                        </div>
+                        <p class="lesson-description">Understanding different positioning methods in CSS.</p>
+                        <a href="lessons/05-position.html" class="btn" target="_blank">View Demo</a>
+                    </div>
+                </div>
                 <div class="lesson-card">
                     <div class="preview-container">
                         <iframe src="lessons/lesson4.html"></iframe>
                     </div>
                     <div class="lesson-content">
-                        <h4 class="lesson-title">CSS Basics</h4>
+                        <h4 class="lesson-title">CSS Basics (lesson4.html)</h4>
                         <div class="tags">
                             <span class="tag">CSS</span>
                             <span class="tag">Styling</span>
@@ -609,210 +714,153 @@
                         <a href="lessons/lesson4.html" class="btn" target="_blank">View Demo</a>
                     </div>
                 </div>
-
-                <div class="lesson-card">
-    <div class="preview-container">
-        <iframe src="lessons/03-flexbox.html"></iframe>
-    </div>
-    <div class="lesson-content">
-        <h4 class="lesson-title">Flexbox Layout</h4>
-        <div class="tags">
-            <span class="tag">CSS</span>
-            <span class="tag">Flexbox</span>
-            <span class="tag">Layout</span>
-        </div>
-        <p class="lesson-description">Using Flexbox for creating flexible page layouts.</p>
-        <a href="lessons/03-flexbox.html" class="btn" target="_blank">View Demo</a>
-    </div>
-</div>
-
-<div class="lesson-card">
-    <div class="preview-container">
-        <iframe src="lessons/04-grid.html"></iframe>
-    </div>
-    <div class="lesson-content">
-        <h4 class="lesson-title">CSS Grid</h4>
-        <div class="tags">
-            <span class="tag">CSS</span>
-            <span class="tag">Grid</span>
-            <span class="tag">Layout</span>
-        </div>
-        <p class="lesson-description">Creating two-dimensional layouts with CSS Grid.</p>
-        <a href="lessons/04-grid.html" class="btn" target="_blank">View Demo</a>
-    </div>
-</div>
-
-<div class="lesson-card">
-    <div class="preview-container">
-        <iframe src="lessons/lesson12f.html"></iframe>
-    </div>
-    <div class="lesson-content">
-        <h4 class="lesson-title">Flexbox Advanced (lesson12f)</h4>
-        <div class="tags">
-            <span class="tag">CSS</span>
-            <span class="tag">Flexbox</span>
-            <span class="tag">Advanced</span>
-        </div>
-        <p class="lesson-description">Advanced flexbox layouts and profile cards.</p>
-        <a href="lessons/lesson12f.html" class="btn" target="_blank">View Demo</a>
-    </div>
-</div>
-
-<div class="lesson-card">
-    <div class="preview-container">
-        <iframe src="lessons/lesson11d.html"></iframe>
-    </div>
-    <div class="lesson-content">
-        <h4 class="lesson-title">Grid Advanced (lesson11d)</h4>
-        <div class="tags">
-            <span class="tag">CSS</span>
-            <span class="tag">Grid</span>
-            <span class="tag">Advanced</span>
-        </div>
-        <p class="lesson-description">Advanced grid layouts and profile cards.</p>
-        <a href="lessons/lesson11d.html" class="btn" target="_blank">View Demo</a>
-    </div>
-</div>
-
-<div class="lesson-card">
-    <div class="preview-container">
-        <iframe src="lessons/lesson10.html"></iframe>
-    </div>
-    <div class="lesson-content">
-        <h4 class="lesson-title">Profile Cards (lesson10)</h4>
-        <div class="tags">
-            <span class="tag">CSS</span>
-            <span class="tag">Flexbox</span>
-            <span class="tag">Profile</span>
-        </div>
-        <p class="lesson-description">Profile card layouts with images and flexbox.</p>
-        <a href="lessons/lesson10.html" class="btn" target="_blank">View Demo</a>
-    </div>
-</div>
-
-<div class="lesson-card">
-    <div class="preview-container">
-        <iframe src="lessons/lesson9.html"></iframe>
-    </div>
-    <div class="lesson-content">
-        <h4 class="lesson-title">Shapes & Music (lesson9)</h4>
-        <div class="tags">
-            <span class="tag">CSS</span>
-            <span class="tag">Shapes</span>
-            <span class="tag">Music</span>
-        </div>
-        <p class="lesson-description">Working with shapes, music UI, and image cropping.</p>
-        <a href="lessons/lesson9.html" class="btn" target="_blank">View Demo</a>
-    </div>
-</div>
-
-<div class="lesson-card">
-    <div class="preview-container">
-        <iframe src="lessons/lesson8.html"></iframe>
-    </div>
-    <div class="lesson-content">
-        <h4 class="lesson-title">Inputs & Details (lesson8)</h4>
-        <div class="tags">
-            <span class="tag">CSS</span>
-            <span class="tag">Inputs</span>
-            <span class="tag">Details</span>
-        </div>
-        <p class="lesson-description">Input styling, details, and SVG usage.</p>
-        <a href="lessons/lesson8.html" class="btn" target="_blank">View Demo</a>
-    </div>
-</div>
-
-<div class="lesson-card">
-    <div class="preview-container">
-        <iframe src="lessons/lesson7d.html"></iframe>
-    </div>
-    <div class="lesson-content">
-        <h4 class="lesson-title">Form Design (lesson7d)</h4>
-        <div class="tags">
-            <span class="tag">CSS</span>
-            <span class="tag">Form</span>
-            <span class="tag">Design</span>
-        </div>
-        <p class="lesson-description">Form design and button styling.</p>
-        <a href="lessons/lesson7d.html" class="btn" target="_blank">View Demo</a>
-    </div>
-</div>
-
-<div class="lesson-card">
-    <div class="preview-container">
-        <iframe src="lessons/lesson7.html"></iframe>
-    </div>
-    <div class="lesson-content">
-        <h4 class="lesson-title">Custom Design Elements (lesson7)</h4>
-        <div class="tags">
-            <span class="tag">CSS</span>
-            <span class="tag">Design</span>
-            <span class="tag">Typography</span>
-        </div>
-        <p class="lesson-description">Creating custom design elements with CSS styling.</p>
-        <a href="lessons/lesson7.html" class="btn" target="_blank">View Demo</a>
-    </div>
-</div>
-
-<div class="lesson-card">
-    <div class="preview-container">
-        <iframe src="lessons/lesson6.html"></iframe>
-    </div>
-    <div class="lesson-content">
-        <h4 class="lesson-title">Stock Ticker (lesson6)</h4>
-        <div class="tags">
-            <span class="tag">CSS</span>
-            <span class="tag">Ticker</span>
-            <span class="tag">Finance</span>
-        </div>
-        <p class="lesson-description">Stock ticker and financial data styling.</p>
-        <a href="lessons/lesson6.html" class="btn" target="_blank">View Demo</a>
-    </div>
-</div>
-
-<div class="lesson-card">
-    <div class="preview-container">
-        <iframe src="lessons/lesson5.html"></iframe>
-    </div>
-    <div class="lesson-content">
-        <h4 class="lesson-title">Apple at Work (lesson5)</h4>
-        <div class="tags">
-            <span class="tag">CSS</span>
-            <span class="tag">Apple</span>
-            <span class="tag">Work</span>
-        </div>
-        <p class="lesson-description">Apple at Work promotional layout and text styling.</p>
-        <a href="lessons/lesson5.html" class="btn" target="_blank">View Demo</a>
-    </div>
-</div>
-
-<div class="lesson-card">
-    <div class="preview-container">
-        <iframe src="lessons/lesson4.html"></iframe>
-    </div>
-    <div class="lesson-content">
-        <h4 class="lesson-title">CSS Basics (lesson4)</h4>
-        <div class="tags">
-            <span class="tag">CSS</span>
-            <span class="tag">Basics</span>
-        </div>
-        <p class="lesson-description">Introduction to CSS selectors, properties, and values.</p>
-        <a href="lessons/lesson4.html" class="btn" target="_blank">View Demo</a>
-    </div>
-</div>
-
                 <div class="lesson-card">
                     <div class="preview-container">
-                        <iframe src="lessons/05-position.html"></iframe>
+                        <iframe src="lessons/lesson5.html"></iframe>
                     </div>
                     <div class="lesson-content">
-                        <h4 class="lesson-title">CSS Positioning</h4>
+                        <h4 class="lesson-title">Apple at Work (lesson5.html)</h4>
                         <div class="tags">
                             <span class="tag">CSS</span>
-                            <span class="tag">Position</span>
+                            <span class="tag">Apple</span>
+                            <span class="tag">Work</span>
                         </div>
-                        <p class="lesson-description">Understanding different positioning methods in CSS.</p>
-                        <a href="lessons/05-position.html" class="btn" target="_blank">View Demo</a>
+                        <p class="lesson-description">Apple at Work promotional layout and text styling.</p>
+                        <a href="lessons/lesson5.html" class="btn" target="_blank">View Demo</a>
+                    </div>
+                </div>
+                <div class="lesson-card">
+                    <div class="preview-container">
+                        <iframe src="lessons/lesson6.html"></iframe>
+                    </div>
+                    <div class="lesson-content">
+                        <h4 class="lesson-title">Stock Ticker (lesson6.html)</h4>
+                        <div class="tags">
+                            <span class="tag">CSS</span>
+                            <span class="tag">Ticker</span>
+                            <span class="tag">Finance</span>
+                        </div>
+                        <p class="lesson-description">Stock ticker and financial data styling.</p>
+                        <a href="lessons/lesson6.html" class="btn" target="_blank">View Demo</a>
+                    </div>
+                </div>
+                <div class="lesson-card">
+                    <div class="preview-container">
+                        <iframe src="lessons/lesson7.html"></iframe>
+                    </div>
+                    <div class="lesson-content">
+                        <h4 class="lesson-title">Custom Design Elements (lesson7.html)</h4>
+                        <div class="tags">
+                            <span class="tag">CSS</span>
+                            <span class="tag">Design</span>
+                            <span class="tag">Typography</span>
+                        </div>
+                        <p class="lesson-description">Creating custom design elements with CSS styling.</p>
+                        <a href="lessons/lesson7.html" class="btn" target="_blank">View Demo</a>
+                    </div>
+                </div>
+                <div class="lesson-card">
+                    <div class="preview-container">
+                        <iframe src="lessons/lesson7d.html"></iframe>
+                    </div>
+                    <div class="lesson-content">
+                        <h4 class="lesson-title">Form Design (lesson7d.html)</h4>
+                        <div class="tags">
+                            <span class="tag">CSS</span>
+                            <span class="tag">Form</span>
+                            <span class="tag">Design</span>
+                        </div>
+                        <p class="lesson-description">Form design and button styling.</p>
+                        <a href="lessons/lesson7d.html" class="btn" target="_blank">View Demo</a>
+                    </div>
+                </div>
+                <div class="lesson-card">
+                    <div class="preview-container">
+                        <iframe src="lessons/lesson8.html"></iframe>
+                    </div>
+                    <div class="lesson-content">
+                        <h4 class="lesson-title">Inputs & Details (lesson8.html)</h4>
+                        <div class="tags">
+                            <span class="tag">CSS</span>
+                            <span class="tag">Inputs</span>
+                            <span class="tag">Details</span>
+                        </div>
+                        <p class="lesson-description">Input styling, details, and SVG usage.</p>
+                        <a href="lessons/lesson8.html" class="btn" target="_blank">View Demo</a>
+                    </div>
+                </div>
+                <div class="lesson-card">
+                    <div class="preview-container">
+                        <iframe src="lessons/lesson9.html"></iframe>
+                    </div>
+                    <div class="lesson-content">
+                        <h4 class="lesson-title">Shapes & Music (lesson9.html)</h4>
+                        <div class="tags">
+                            <span class="tag">CSS</span>
+                            <span class="tag">Shapes</span>
+                            <span class="tag">Music</span>
+                        </div>
+                        <p class="lesson-description">Working with shapes, music UI, and image cropping.</p>
+                        <a href="lessons/lesson9.html" class="btn" target="_blank">View Demo</a>
+                    </div>
+                </div>
+                <div class="lesson-card">
+                    <div class="preview-container">
+                        <iframe src="lessons/lesson10.html"></iframe>
+                    </div>
+                    <div class="lesson-content">
+                        <h4 class="lesson-title">Profile Cards (lesson10.html)</h4>
+                        <div class="tags">
+                            <span class="tag">CSS</span>
+                            <span class="tag">Flexbox</span>
+                            <span class="tag">Profile</span>
+                        </div>
+                        <p class="lesson-description">Profile card layouts with images and flexbox.</p>
+                        <a href="lessons/lesson10.html" class="btn" target="_blank">View Demo</a>
+                    </div>
+                </div>
+                <div class="lesson-card">
+                    <div class="preview-container">
+                        <iframe src="lessons/lesson11d.html"></iframe>
+                    </div>
+                    <div class="lesson-content">
+                        <h4 class="lesson-title">Grid Advanced (lesson11d.html)</h4>
+                        <div class="tags">
+                            <span class="tag">CSS</span>
+                            <span class="tag">Grid</span>
+                            <span class="tag">Advanced</span>
+                        </div>
+                        <p class="lesson-description">Advanced grid layouts and profile cards.</p>
+                        <a href="lessons/lesson11d.html" class="btn" target="_blank">View Demo</a>
+                    </div>
+                </div>
+                <div class="lesson-card">
+                    <div class="preview-container">
+                        <iframe src="lessons/lesson12.html"></iframe>
+                    </div>
+                    <div class="lesson-content">
+                        <h4 class="lesson-title">Advanced Techniques (lesson12.html)</h4>
+                        <div class="tags">
+                            <span class="tag">CSS</span>
+                            <span class="tag">Advanced</span>
+                        </div>
+                        <p class="lesson-description">Exploring more advanced CSS techniques and properties.</p>
+                        <a href="lessons/lesson12.html" class="btn" target="_blank">View Demo</a>
+                    </div>
+                </div>
+                <div class="lesson-card">
+                    <div class="preview-container">
+                        <iframe src="lessons/lesson12f.html"></iframe>
+                    </div>
+                    <div class="lesson-content">
+                        <h4 class="lesson-title">Flexbox Advanced (lesson12f.html)</h4>
+                        <div class="tags">
+                            <span class="tag">CSS</span>
+                            <span class="tag">Flexbox</span>
+                            <span class="tag">Advanced</span>
+                        </div>
+                        <p class="lesson-description">Advanced flexbox layouts and profile cards.</p>
+                        <a href="lessons/lesson12f.html" class="btn" target="_blank">View Demo</a>
                     </div>
                 </div>
             </div>
@@ -889,7 +937,7 @@
             
             <div class="project-showcase">
                 <div class="project-header">
-                    <h3>YouTube Clone</h3>
+                    <h3>YouTube Clone </h3>
                     <p>A responsive recreation of the YouTube interface using HTML and CSS</p>
                 </div>
                 <div class="project-content">

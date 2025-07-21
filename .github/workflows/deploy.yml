@@ -2,26 +2,34 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ]
-  workflow_dispatch:
-
-permissions:
-  contents: write
+    branches:
+      - main
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
-    concurrency:
-      group: ${{ github.workflow }}-${{ github.ref }}
     steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
         with:
-          branch: gh-pages
-          folder: .
-          clean: true
-          clean-exclude: |
-            .nojekyll
+          node-version: '14'
+
+      - name: Build and Deploy
+        run: |
+          mkdir -p docs
+          cp -r projects/youtube-clone/* docs/
+          cp index.html docs/
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
+          git add docs
+          git commit -m 'Move youtube-clone project and index.html to docs for GitHub Pages'
+          git push
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
